@@ -5,7 +5,7 @@ The ReadMe file was created on 30/08/2020
 BikeShare Project
 
 ### Description
-Analyse data for the US Bikeshare project
+Analyse data for the US Bikeshare project and answer interesting questions about it by computing descriptive statistics.
 
 ### Files used
 bikeshare_2.py
