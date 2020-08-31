@@ -34,7 +34,7 @@ def get_filters():
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
     print('Hello! Let\'s explore some US bikeshare data!')
-    # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
+
     try:
         city = input('Which city would you like to analyze? chicago, new york city or washington?')
         while city not in CITY_DATA:
@@ -43,7 +43,7 @@ def get_filters():
 
         print('Analyse data for city: ', city)
 
-        # TO DO: get user input for month (all, january, february, ... , june)
+
         month = input('Which month would you like to analyse data for from january to june or all?')
         while month not in MONTH_LIST:
             print('There seems to be a typo, plese enter the month again?')
@@ -51,7 +51,7 @@ def get_filters():
 
         print('Analyse data for month: ', month)
 
-        # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
+
 
         day = input('Which day would you like to analyse data for?')
         while day not in DAYS_LIST:
@@ -112,7 +112,6 @@ def time_stats(df):
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
 
-    # TO DO: display the most common month
     try:
         popular_month_num = df['Start Time'].dt.month.mode()[0]
         popular_month = MONTH_LIST[popular_month_num - 1].title()
@@ -120,14 +119,14 @@ def time_stats(df):
     except Exception as e:
         print('Could not calculate the most common month due to the following error: {}'.format(e))
 
-    # TO DO: display the most common day of week
+
     try:
         popular_day_of_week = df['day_of_week'].mode()[0]
         print('The most popular weekday is:', popular_day_of_week)
     except Exception as e:
         print('Could not calculate the most common day of week due to the following error: {}'.format(e))
 
-    # TO DO: display the most common start hour
+
     try:
         popular_start_hour = df['hour'].mode()[0]
         print('The most popular starting hour is:', popular_start_hour)
@@ -144,7 +143,7 @@ def station_stats(df):
     print('\nCalculating The Most Popular Stations and Trip...\n')
     start_time = time.time()
 
-    # TO DO: display most commonly used start station
+
     try:
         popular_start_station = df['Start Station'].mode()[0]
         popular_start_station_amount = df['Start Station'].value_counts()[0]
@@ -154,7 +153,7 @@ def station_stats(df):
     except Exception as e:
         print('Could not calculate the most commonly used start station due to the following error: {}'.format(e))
 
-    # TO DO: display most commonly used end station
+
     try:
         popular_end_station = df['End Station'].mode()[0]
         popular_end_station_amount = df['End Station'].value_counts()[0]
@@ -163,7 +162,7 @@ def station_stats(df):
     except Exception as e:
         print('Could not calculate the most commonly used end station due to the following error: {}'.format(e))
 
-    # TO DO: display most frequent combination of start station and end station trip
+
     try:
         popular_trip = df.loc[:, 'Start Station':'End Station'].mode()[0:]
         popular_trip_amt = df.groupby(["Start Station", "End Station"]).size().max()
@@ -183,7 +182,7 @@ def trip_duration_stats(df):
     print('\nCalculating Trip Duration...\n')
     start_time = time.time()
 
-    # TO DO: display total travel time
+
     try:
         travel_time = df['Trip Duration'].dropna()
         total_travel_time = travel_time.sum()
@@ -191,7 +190,7 @@ def trip_duration_stats(df):
     except Exception as e:
         print('Could not calculate the total travel time of users due to the following error: {}'.format(e))
 
-    # TO DO: display mean travel time
+
     try:
         total_mean = travel_time.mean()
         print('the mean travel time is: ', total_mean)
@@ -208,19 +207,19 @@ def user_stats(df):
     print('\nCalculating User Stats...\n')
     start_time = time.time()
 
-    # TO DO: Display counts of user types
+
     try:
         print('The count of user types are: ', df['User Type'].value_counts())
     except Execption as e:
         print('Could not calculate the user types due to the following error: {}'.format(e))
 
-    # TO DO: Display counts of gender
+
     try:
         print('The gender count is: ', df['Gender'].value_counts())
     except Exception as e:
         print('Could not calculate the gender count due to the following error: {}'.format(e))
 
-    # TO DO: Display earliest, most recent, and most common year of birth
+    
     try:
         earliest_year = df['Birth Year'].min()
         most_recent_year = df['Birth Year'].max()
