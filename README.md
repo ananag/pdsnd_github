@@ -16,3 +16,5 @@ new_york_city.csv
 ### Credits
 Udacity's nanadegree course helped with python language to work on the project 
 
+###Notes
+The bikeshare project has been written in python language.
