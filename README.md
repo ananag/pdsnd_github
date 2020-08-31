@@ -1,6 +1,9 @@
 ### Date created
 The ReadMe file was created on 30/08/2020
 
+### Copyright
+This project belongs to ananag
+
 ### Project Title
 BikeShare Project
 
